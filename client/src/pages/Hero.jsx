@@ -27,7 +27,7 @@ const Hero = () => {
             <div className="mt-12 flex gap-6 justify-center text-2xl text-brand-muted">
                 <a href="https://github.com/mudassar-durvaish" target="_blank" className="hover:text-white transition-colors"><i className="fab fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/muhammad-mudassar3" target="_blank" className="hover:text-white transition-colors"><i className="fab fa-linkedin"></i></a>
-                <a href="mailto:mudassardurvaish@gmail.com" className="hover:text-white transition-colors"><i className="fas fa-envelope"></i></a>
+                <a href="#contact" className="hover:text-white transition-colors"><i className="fas fa-envelope"></i></a>
             </div>
         </div>
     </section>

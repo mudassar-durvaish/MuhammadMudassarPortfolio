@@ -17,7 +17,7 @@ const Contact = () => {
     
     try {
       // Pointing to your local backend (change URL when deploying)
-      await axios.post('http://localhost:5000/api/contact/send', {
+      await axios.post('https://muhammadmudassarportfoliobackend.onrender.com/api/contact/send', {
           name: formData.name,
           email: formData.email,
           message: formData.message

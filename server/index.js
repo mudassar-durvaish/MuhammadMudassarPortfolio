@@ -3,11 +3,11 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const nodemailer = require('nodemailer');
-const rateLimit = require('express-rate-limit'); // IMPORT ADDED
-const cron = require('node-cron'); // Cron for scheduling
-const geoip = require('geoip-lite'); // GeoIP for location
-const Contact = require('./models/Contact'); // Import Contact Model
-const Visit = require('./models/Visit'); // Import Visit Model
+const rateLimit = require('express-rate-limit'); 
+const cron = require('node-cron'); 
+const geoip = require('geoip-lite'); 
+const Contact = require('./models/Contact'); 
+const Visit = require('./models/Visit'); 
 
 dotenv.config();
 const app = express();
@@ -26,13 +26,14 @@ const emailLimiter = rateLimit({
     legacyHeaders: false, // Disable the `X-RateLimit-*` headers
 });
 
-// 2. CORS Options: Define who is allowed to talk to this backend
+// 2. CORS Options: Defining who is allowed to talk to this backend
 const corsOptions = {
-    // We allow localhost so you can test on your computer.
-    // FUTURE TODO: Once we deploy the Frontend to Vercel, will add that URL here like:
-    // origin: ['http://localhost:5173', 'https://your-project-name.vercel.app'],
-    origin: ['http://localhost:5173', 'http://localhost:3000'], 
-    methods: ['GET', 'POST'], // Only allow GET and POST requests
+    origin: [
+        'http://localhost:5173',                   // Local testing
+        'https://mudassardurvaish.me',             // Your main domain
+        'https://www.mudassardurvaish.me'          // Your www domain
+    ],
+    methods: ['GET', 'POST'],
     credentials: true
 };
 
