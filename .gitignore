@@ -1,0 +1,18 @@
+# --- Dependencies (Too big to upload) ---
+node_modules/
+*/node_modules/
+client/node_modules/
+server/node_modules/
+
+# --- Security (NEVER upload these) ---
+.env
+.env.local
+server/.env
+
+# --- Build Outputs (These are generated automatically) ---
+dist/
+build/
+client/dist/
+
+# --- System Files ---
+.DS_Store
