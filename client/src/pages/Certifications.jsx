@@ -39,14 +39,29 @@ const certData = [
     link: "https://coursera.org/share/3057e65e382f3f192ceb2dc90286544d"
   },
   {
-    title: "Career Essentials in Software Dev",
-    provider: "Microsoft & LinkedIn",
-    link: "https://www.linkedin.com/learning/certificates/eb616da4245a510c2da75321c159a6871a0db908e9b30809bf65e413c9de8aa5"
-  },
-  {
     title: "Programming Foundations: Beyond Fundamentals",
     provider: "LinkedIn Learning",
     link: "https://www.linkedin.com/learning/certificates/bc828c6fc0c7b48c3c2620a96f7c19bfc40d86f90092d851ae2cb5df3a2532f5"
+  },
+  {
+    title: "Getting Started with Cisco Packet Tracer",
+    provider: "Cisco Networking Academy",
+    link: ""
+  },
+  {
+    title: "Aspire Leaders Program (2026)",
+    provider: "Aspire Institute",
+    link: "" 
+  },
+  {
+    title: "Soft Skills Training",
+    provider: "International Centre for Migration Policy Development (ICMPD)",
+    link: "https://softskills.oec.gov.pk/uploads/certificates/certificate_softskill_6380c84e.pdf"
+  },
+  {
+    title: "AWS Educate – Cloud Computing 101",
+    provider: "Amazon Web Services (AWS)",
+    link: "https://www.credly.com/badges/846d9e01-4d4a-435e-b0c2-5f33fede7d06/public_url"
   },
   {
     title: "Intro to Career Skills in Software Dev",
@@ -54,9 +69,9 @@ const certData = [
     link: "https://www.linkedin.com/learning/certificates/471737614887b90da3c07cdf62cb93f176d9ec04e4508f3157c87283287d428b"
   },
   {
-    title: "Getting Started with Cisco Packet Tracer",
-    provider: "Cisco Networking Academy",
-    link: ""
+    title: "Career Essentials in Software Dev",
+    provider: "Microsoft & LinkedIn",
+    link: "https://www.linkedin.com/learning/certificates/eb616da4245a510c2da75321c159a6871a0db908e9b30809bf65e413c9de8aa5"
   }
 ];
 

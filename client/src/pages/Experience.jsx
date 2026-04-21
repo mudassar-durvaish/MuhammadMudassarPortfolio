@@ -11,15 +11,11 @@ const Experience = () => {
                     <span className="absolute -left-[5px] top-2 w-3 h-3 rounded-full bg-brand-primary group-hover:scale-125 transition-transform"></span>
                     <div className="bg-brand-card p-6 rounded-xl border border-white/5 hover:border-brand-primary/40 transition-all">
                         <div className="flex flex-col md:flex-row justify-between mb-2">
-                            <h3 className="text-xl font-bold text-white">MERN Stack Intern</h3>
-                            <span className="text-sm text-brand-muted font-mono">June 2025 – July 2025</span>
+                            <h3 className="text-xl font-bold text-white">MERN Stack Development Intern</h3>
+                            <span className="text-sm text-brand-muted font-mono">Jun 2025 – Jul 2025</span>
                         </div>
                         <p className="text-brand-primary text-sm mb-4">NextPak Agile Solutions Pvt. Ltd.</p>
-                        <ul className="list-disc list-inside text-brand-muted text-sm space-y-1">
-                            <li>Developed secure backend systems using Node.js and Express.js.</li>
-                            <li>Integrated MongoDB with scalable schemas.</li>
-                            <li>Implemented JWT-based authentication.</li>
-                        </ul>
+                        <p className="text-brand-muted text-sm">Engineered scalable Node.js backends and robust RESTful API integrations for enterprise systems within Agile teams.</p>
                     </div>
                 </div>
 
@@ -28,10 +24,10 @@ const Experience = () => {
                     <div className="bg-brand-card p-6 rounded-xl border border-white/5 hover:border-brand-primary/40 transition-all">
                         <div className="flex flex-col md:flex-row justify-between mb-2">
                             <h3 className="text-xl font-bold text-white">Web Development Intern</h3>
-                            <span className="text-sm text-brand-muted font-mono">June 2024 – July 2024</span>
+                            <span className="text-sm text-brand-muted font-mono">Jun 2024 – Jul 2024</span>
                         </div>
                         <p className="text-brand-primary text-sm mb-4">NextPak Agile Solutions Pvt. Ltd.</p>
-                        <p className="text-brand-muted text-sm">Improved UI/UX performance by 30% using React and Tailwind.</p>
+                        <p className="text-brand-muted text-sm">Developed responsive frontend interfaces using core web technologies, optimizing application page load performance.</p>
                     </div>
                 </div>
 
@@ -39,11 +35,11 @@ const Experience = () => {
                     <span className="absolute -left-[5px] top-2 w-3 h-3 rounded-full bg-gray-600 group-hover:bg-brand-primary transition-colors"></span>
                     <div className="bg-brand-card p-6 rounded-xl border border-white/5 hover:border-brand-primary/40 transition-all">
                         <div className="flex flex-col md:flex-row justify-between mb-2">
-                            <h3 className="text-xl font-bold text-white">Senior Executive (Core Ops)</h3>
+                            <h3 className="text-xl font-bold text-white">Senior Executive (Core Operations)</h3>
                             <span className="text-sm text-brand-muted font-mono">2025 – 2026</span>
                         </div>
-                        <p className="text-brand-primary text-sm mb-4">MLSA — Microsoft Learn Student Ambassadors</p>
-                        <p className="text-brand-muted text-sm">Leading technical workshops and community operations at UET Taxila.</p>
+                        <p className="text-brand-primary text-sm mb-4">MLSA UET Taxila</p>
+                        <p className="text-brand-muted text-sm">Managed operational logistics and cross-functional campus tech events, fostering digital fluency among engineering students.</p>
                     </div>
                 </div>
 

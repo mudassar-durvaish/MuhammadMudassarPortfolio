@@ -7,26 +7,30 @@ const Hero = () => {
 
         <div className="text-center max-w-4xl animate-slide-up">
             <span className="text-brand-primary font-medium tracking-wide uppercase text-sm mb-4 block">Based in Pakistan</span>
-            <h1 className="text-5xl md:text-7xl font-display font-bold leading-tight mb-6">
-                Full Stack <span className="gradient-text">MERN Developer</span> <br />
-                & AI Practitioner.
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-tight mb-6">
+                Analytical Software Engineer, <br />
+                <span className="gradient-text">MERN Stack Developer</span>, <br />
+                Cloud Architect & AI Practitioner.
             </h1>
             <p className="text-brand-muted text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-                I am <span className="text-white">Muhammad Mudassar</span>. I build scalable web applications and intelligent AI systems that solve real-world problems.
+                Bridging the gap between scalable full-stack development (MERN Stack), advanced Artificial Intelligence, and robust Cloud infrastructure to solve complex business problems.
             </p>
             
             <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
                 <a href="#projects" className="px-8 py-3.5 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)]">
-                    View My Work
+                    View Enterprise Projects
                 </a>
                 <a href="#contact" className="px-8 py-3.5 bg-transparent border border-gray-700 text-white font-semibold rounded-full hover:border-brand-primary hover:text-brand-primary transition-all">
                     Contact Me
                 </a>
+                <a href="/Muhammad_Mudassar_CV.pdf" download className="px-8 py-3.5 bg-brand-primary/10 border border-brand-primary text-brand-primary font-semibold rounded-full hover:bg-brand-primary hover:text-black transition-all flex items-center gap-2">
+                    <i className="fas fa-download"></i> Download CV
+                </a>
             </div>
 
             <div className="mt-12 flex gap-6 justify-center text-2xl text-brand-muted">
-                <a href="https://github.com/mudassar-durvaish" target="_blank" className="hover:text-white transition-colors"><i className="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/muhammad-mudassar3" target="_blank" className="hover:text-white transition-colors"><i className="fab fa-linkedin"></i></a>
+                <a href="https://github.com/mudassar-durvaish" target="_blank" rel="noreferrer" className="hover:text-white transition-colors"><i className="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/muhammad-mudassar3" target="_blank" rel="noreferrer" className="hover:text-white transition-colors"><i className="fab fa-linkedin"></i></a>
                 <a href="#contact" className="hover:text-white transition-colors"><i className="fas fa-envelope"></i></a>
             </div>
         </div>
