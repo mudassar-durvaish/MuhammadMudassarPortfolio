@@ -4,7 +4,7 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const nodemailer = require('nodemailer');
 const rateLimit = require('express-rate-limit'); 
-const cron = require('node-cron'); 
+// const cron = require('node-cron'); 
 const geoip = require('geoip-lite'); 
 const Contact = require('./models/Contact'); 
 const Visit = require('./models/Visit'); 
@@ -110,56 +110,61 @@ app.post('/api/visit', async (req, res) => {
     }
 });
 
+// --- Simple Ping Route for cron-job.org ---
+app.get('/api/ping', (req, res) => {
+    res.status(200).send('Server is awake');
+});
+
 // --- Weekly Email Report (Cron Job) ---
 // Runs every Sunday at midnight (0 0 * * 0)
-cron.schedule('0 0 * * 0', async () => {
-    console.log('Running weekly visit report...');
-    try {
-        // Calculate date 7 days ago
-        const sevenDaysAgo = new Date();
-        sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+// cron.schedule('0 0 * * 0', async () => {
+//     console.log('Running weekly visit report...');
+//     try {
+//         // Calculate date 7 days ago
+//         const sevenDaysAgo = new Date();
+//         sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
 
-        // Fetch visits in the last 7 days
-        const visits = await Visit.find({
-            timestamp: { $gte: sevenDaysAgo }
-        });
+//         // Fetch visits in the last 7 days
+//         const visits = await Visit.find({
+//             timestamp: { $gte: sevenDaysAgo }
+//         });
 
-        const visitCount = visits.length;
+//         const visitCount = visits.length;
 
-        // Format visit details
-        let visitDetails = visits.map((v, index) => {
-            return `${index + 1}. Time: ${v.timestamp} | IP: ${v.ip} | Country: ${v.country} | Device: ${v.userAgent}`;
-        }).join('\n');
+//         // Format visit details
+//         let visitDetails = visits.map((v, index) => {
+//             return `${index + 1}. Time: ${v.timestamp} | IP: ${v.ip} | Country: ${v.country} | Device: ${v.userAgent}`;
+//         }).join('\n');
 
-        if (visitDetails.length === 0) {
-            visitDetails = "No visits recorded this week.";
-        }
+//         if (visitDetails.length === 0) {
+//             visitDetails = "No visits recorded this week.";
+//         }
 
-        // Transporter (Reuse existing config or create new)
-        const transporter = nodemailer.createTransport({
-            host: "smtp.gmail.com",
-            port: 465,
-            secure: true,
-            auth: {
-                user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_PASS
-            }
-        });
+//         // Transporter (Reuse existing config or create new)
+//         const transporter = nodemailer.createTransport({
+//             host: "smtp.gmail.com",
+//             port: 465,
+//             secure: true,
+//             auth: {
+//                 user: process.env.EMAIL_USER,
+//                 pass: process.env.EMAIL_PASS
+//             }
+//         });
 
-        const mailOptions = {
-            from: process.env.EMAIL_USER,
-            to: process.env.EMAIL_USER,
-            subject: `Weekly Portfolio Traffic Report`,
-            text: `Hello Muhammad,\n\nHere is your weekly website traffic report:\n\nTotal Visits (Last 7 Days): ${visitCount}\n\n--- Visit Details ---\n${visitDetails}\n\nKeep up the good work!\n\n- Your Portfolio Bot`
-        };
+//         const mailOptions = {
+//             from: process.env.EMAIL_USER,
+//             to: process.env.EMAIL_USER,
+//             subject: `Weekly Portfolio Traffic Report`,
+//             text: `Hello Muhammad,\n\nHere is your weekly website traffic report:\n\nTotal Visits (Last 7 Days): ${visitCount}\n\n--- Visit Details ---\n${visitDetails}\n\nKeep up the good work!\n\n- Your Portfolio Bot`
+//         };
 
-        await transporter.sendMail(mailOptions);
-        console.log('Weekly report sent successfully.');
+//         await transporter.sendMail(mailOptions);
+//         console.log('Weekly report sent successfully.');
 
-    } catch (error) {
-        console.error('Error sending weekly report:', error);
-    }
-});
+//     } catch (error) {
+//         console.error('Error sending weekly report:', error);
+//     }
+// });
 
 // // Uncomment if you wan to make the project live locally
 // const PORT = process.env.PORT || 5000;
