@@ -34,17 +34,19 @@ const Contact = () => {
       }, 2000);
 
     } catch (error) {
-      console.error(error);
+      console.log("Full Error Object:", error.response); // This will show more detail in console
       setIsSending(false);
       setIsError(true);
 
-      // CHECK FOR 429 STATUS (Rate Limit)
       if (error.response && error.response.status === 429) {
-        setStatus('You have sent 3 emails in 15 minutes. Please wait before sending another.');
+          setStatus('Rate limit exceeded. Please wait 15 minutes.');
+      } else if (error.response) {
+          // This tells you EXACTLY what the server said
+          setStatus(`Error ${error.response.status}: ${error.response.data.message || 'Server Error'}`);
       } else {
-        setStatus('Failed to send message. Please try again.');
+          setStatus('Cannot reach the server. Check your internet or backend URL.');
       }
-    }
+}
   };
 
   return (

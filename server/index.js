@@ -15,16 +15,16 @@ const app = express();
 // --- Security Configurations ---
 
 // 1. Rate Limiter: Prevent spam (3 emails per 15 minutes per IP)
-const emailLimiter = rateLimit({
-    windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 3, // Limit each IP to 3 requests per windowMs
-    message: { 
-        success: false, 
-        message: "Too many emails sent from this IP, please try again after 15 minutes." 
-    },
-    standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
-    legacyHeaders: false, // Disable the `X-RateLimit-*` headers
-});
+// const emailLimiter = rateLimit({
+//     windowMs: 15 * 60 * 1000, // 15 minutes
+//     max: 3, // Limit each IP to 3 requests per windowMs
+//     message: { 
+//         success: false, 
+//         message: "Too many emails sent from this IP, please try again after 15 minutes." 
+//     },
+//     standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
+//     legacyHeaders: false, // Disable the `X-RateLimit-*` headers
+// });
 
 // 2. CORS Options: Defining who is allowed to talk to this backend
 const corsOptions = {
@@ -50,7 +50,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 // --- Email API Route ---
 // Added 'emailLimiter' as a middle argument here to protect this specific route
-app.post('/api/contact/send', emailLimiter, async (req, res) => {
+app.post('/api/contact/send', async (req, res) => {
     const { name, email, message } = req.body;
 
     try {
@@ -66,7 +66,7 @@ app.post('/api/contact/send', emailLimiter, async (req, res) => {
         // Transporter Configuration
         const transporter = nodemailer.createTransport({
             host: "smtp.gmail.com",
-            port: 587,              // Secure Port for Gmail
+            port: 465,              // Secure Port for Gmail
             secure: true,           // Use SSL/TLS
             auth: {
                 user: process.env.EMAIL_USER,
