@@ -7,7 +7,7 @@ const Hero = () => {
 
         <div className="text-center max-w-4xl animate-slide-up">
             <span className="text-brand-primary font-medium tracking-wide uppercase text-sm mb-4 block">Based in Pakistan</span>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-tight mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6">
                 Analytical Software Engineer, <br />
                 <span className="gradient-text">MERN Stack Developer</span>, <br />
                 Cloud Architect & AI Practitioner.
