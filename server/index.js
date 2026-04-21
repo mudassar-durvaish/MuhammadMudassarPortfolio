@@ -31,7 +31,8 @@ const corsOptions = {
     origin: [
         'http://localhost:5173',                   // Local testing
         'https://mudassardurvaish.me',             // Your main domain
-        'https://www.mudassardurvaish.me'          // Your www domain
+        'https://www.mudassardurvaish.me',
+        'https://muhammad-mudassar-portfolio.vercel.app'       // Your www domain
     ],
     methods: ['GET', 'POST'],
     credentials: true
