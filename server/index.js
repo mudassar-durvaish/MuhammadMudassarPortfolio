@@ -35,7 +35,8 @@ const corsOptions = {
         'https://muhammad-mudassar-portfolio.vercel.app'       // Your www domain
     ],
     methods: ['GET', 'POST'],
-    credentials: true
+    credentials: true,
+    optionsSuccessStatus: 200
 };
 
 // Middleware
