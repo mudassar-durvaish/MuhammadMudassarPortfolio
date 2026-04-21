@@ -14,17 +14,17 @@ const app = express();
 
 // --- Security Configurations ---
 
-// 1. Rate Limiter: Prevent spam (3 emails per 15 minutes per IP)
-// const emailLimiter = rateLimit({
-//     windowMs: 15 * 60 * 1000, // 15 minutes
-//     max: 3, // Limit each IP to 3 requests per windowMs
-//     message: { 
-//         success: false, 
-//         message: "Too many emails sent from this IP, please try again after 15 minutes." 
-//     },
-//     standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
-//     legacyHeaders: false, // Disable the `X-RateLimit-*` headers
-// });
+// 1. Rate Limiter: Prevent spam (5 emails per 15 minutes per IP)
+const emailLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 5, // Limit each IP to 5 requests per windowMs
+    message: { 
+        success: false, 
+        message: "Too many emails sent from this IP, please try again after 15 minutes." 
+    },
+    standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
+    legacyHeaders: false, // Disable the `X-RateLimit-*` headers
+});
 
 // 2. CORS Options: Defining who is allowed to talk to this backend
 const corsOptions = {
@@ -50,7 +50,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 // --- Email API Route ---
 // Added 'emailLimiter' as a middle argument here to protect this specific route
-app.post('/api/contact/send', async (req, res) => {
+app.post('/api/contact/send', emailLimiter, async (req, res) => {
     const { name, email, message } = req.body;
 
     try {
