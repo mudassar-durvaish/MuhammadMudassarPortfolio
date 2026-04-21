@@ -64,7 +64,7 @@ app.post('/api/contact/send', emailLimiter, async (req, res) => {
         // Transporter Configuration
         const transporter = nodemailer.createTransport({
             host: "smtp.gmail.com",
-            port: 465,              // Secure Port for Gmail
+            port: 587,              // Secure Port for Gmail
             secure: true,           // Use SSL/TLS
             auth: {
                 user: process.env.EMAIL_USER,
@@ -161,5 +161,9 @@ cron.schedule('0 0 * * 0', async () => {
     }
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// // Uncomment if you wan to make the project live locally
+// const PORT = process.env.PORT || 5000;
+// app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+// ADD THIS FOR VERCEL DEPLOYMENT Remove if for local testing:
+module.exports = app;
